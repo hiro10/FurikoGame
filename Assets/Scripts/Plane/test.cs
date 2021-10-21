@@ -24,6 +24,9 @@ public class test : MonoBehaviour
     }
 
     // Update is called once per frame
+    /// <summary>
+    /// Rayが当たった場所を円運動の中心ととらえている（でもうまくいかない）
+    /// </summary>
     void Update()
     {
         Debug.DrawRay(gameObject.transform.position, Vector3.up * 6, Color.blue, 0.1f);
@@ -53,33 +56,5 @@ public class test : MonoBehaviour
             transform.RotateAround(hit.point,
                transform.forward, speed * Time.deltaTime);
         }
-        //if (center != null)
-        //{
-        //    //RotateAround(円運動の中心,進行方向,速度)
-        //    transform.RotateAround(center.transform.position,
-        //    transform.forward, speed * Time.deltaTime);
-        //}
     }
-
-    //void RayTest()
-    //{
-    //    //Rayの作成　　　　　　　↓Rayを飛ばす原点　　　↓Rayを飛ばす方向
-    //    Ray ray = new Ray(transform.position, new Vector3(0, 10, 0));
-
-    //    //Rayが当たったオブジェクトの情報を入れる箱
-    //    RaycastHit hit;
-
-    //    //Rayの飛ばせる距離
-    //    int distance = 10;
-
-    //    //Rayの可視化    ↓Rayの原点　　　　↓Rayの方向　　　　　　　　　↓Rayの色
-    //    Debug.DrawLine(ray.origin, ray.direction * distance, Color.red);
-
-    //    //もしRayにオブジェクトが衝突したら
-    //    //                  ↓Ray  ↓Rayが当たったオブジェクト ↓距離
-    //    if (Physics.Raycast(ray, out hit, distance))
-    //    {
-    //        hit.transform.position
-    //    }
-    //}
 }
